@@ -1,0 +1,129 @@
+$d1: #082032;
+$bd1: rgba($d1, 0.88);
+$d2: #2c394b;
+$bd2: rgba($d2, 0.88);
+$d3: #334756;
+$bd3: rgba($d3, 0.88);
+$cp1: #af43be;
+$cp2: #fd8090;
+$cp3: #c4ffff;
+$cp4: #09deea;
+$cp5: #1261d1;
+// ------------------------------
+// Variables <------ ENDS ------>
+// ------------------------------
+.f_ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row,
+col {
+  margin: 0;
+  padding: 0;
+}
+
+.configure-the-page {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 2rem 3rem;
+  min-height: 100vh;
+  height: 100%;
+  &.htmltojsx {
+    .input-area {
+      align-items: flex-start;
+    }
+  }
+  .input-area {
+    flex-direction: row;
+    width: 100%;
+  }
+  .option-wrapper {
+    width: 100%;
+    .option-tab {
+      background-color: $d1;
+      border: 1px solid $bd1;
+      color: white;
+      width: 100%;
+      padding: 4rem 0rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 300ms;
+      &.active {
+        background-color: $cp2;
+        border: 1px solid rgba($cp2, 0.4);
+        pointer-events: none;
+      }
+      &:hover {
+        background-color: $d3;
+        transition: 300ms;
+      }
+      &.small {
+        padding: 1rem 0rem;
+      }
+    }
+  }
+}
+// ------------------------------
+// General <------ ENDS ------>
+// ------------------------------
+.atom-builder {
+  .content {
+    width: 100%;
+    position: relative;
+    .atomic-showcase {
+      position: absolute;
+      .showDemo {
+        // background-color: rgba($d3, 0.1);
+        background-color: white;
+        border: 1px solid rgba($bd3, 0.4);
+        border-radius: 10px;
+        padding: 2rem 1rem;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 2rem;
+        z-index: 100;
+        .dummy {
+          width: inherit;
+          height: inherit;
+          position: relative;
+          .handle {
+            position: absolute;
+          }
+        }
+      }
+      .type-system {
+      }
+      .options {
+        .atomic-property {
+          background-color: white;
+          border: 1px solid rgba($bd3, 0.2);
+          flex-direction: row;
+          padding: 10px 10px;
+          border-radius: 10px;
+          transition: 500ms;
+          &.set {
+            transition: 500ms;
+            background-color: rgba($bd3, 0.1);
+          }
+          .take-input {
+            margin-left: 10px;
+          }
+        }
+      }
+      .prism-code {
+        text-align: left;
+        margin: 1em 0;
+        padding: 1rem;
+        overflow: auto;
+        border-radius: 10px;
+      }
+      & .token-line {
+        line-height: 1.3em;
+        height: 1.3em;
+      }
+    }
+  }
+}

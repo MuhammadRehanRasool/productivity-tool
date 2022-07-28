@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./Global.scss";
+import Home from "./views/Home";
+// ------------------------------
+// Pure Home <------ ENDS ------>
+// ------------------------------
+import HTMLtoJSXHome from "./views/htmltojsx/Home";
+import OnlineToolsHome from "./views/onlinetools/Home";
+import AtomBuilderHome from "./views/atombuilder/Home";
+// ------------------------------
+// Sub Home <------ ENDS ------>
+// ------------------------------
+import Button from "./atombuilder/Button";
+// ------------------------------
+// Atom Builder Components <------ ENDS ------>
+// ------------------------------
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="htmltojsx" element={<HTMLtoJSXHome />}></Route>
+          <Route path="onlinetools" element={<OnlineToolsHome />}></Route>
+
+          <Route path="atombuilder">
+            <Route index element={<AtomBuilderHome />} />
+            <Route
+              path="button"
+              element={
+                <AtomBuilderHome path="button">
+                  <Button />
+                </AtomBuilderHome>
+              }
+            ></Route>
+          </Route>
+          <Route path="/" index element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
